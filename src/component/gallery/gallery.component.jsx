@@ -1,18 +1,20 @@
 import "./gallery.styles.scss";
-import Courses from "../../temp-seed/shop-data.json";
+import { GalleryContext } from "../../context/gallery-context";
 import GalleryItem from "./gallery-item/gallery-item.component";
+import { useContext } from "react";
 
 const Gallery = () => {
+  const { courses } = useContext(GalleryContext);
+  console.log(courses);
   return (
-    <div>
-      <div>
-        <h1> Courses</h1>
+    <div className="galleries-title">
+      <div className="galleries-title">
+        <h2> Courses</h2>
       </div>
       <div className="galleries-container">
-        {Courses &&
-          Courses.map((course) => {
-            //console.log(course.id);
-            return <GalleryItem galleryItem={course} key={course.id} />;
+        {courses &&
+          courses.map((course) => {
+            return <GalleryItem course={course} key={course.id} />;
           })}
       </div>
     </div>

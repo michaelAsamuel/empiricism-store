@@ -1,7 +1,7 @@
-import sky from "../../../assets/sky.jpeg";
+import sky from "../../../assets/sky.jpg";
 import "./gallery-item.styles.scss";
 
-const GalleryItem = (galleryItem) => {
+const GalleryItem = ({ course }) => {
   return (
     <div
       className="gallery-item-container"
@@ -13,9 +13,9 @@ const GalleryItem = (galleryItem) => {
     >
       <div className="gallery-item-body">
         <span className="gallery-item-text">
-          <h2>{galleryItem.galleryItem.name}</h2>
+          <h2>{course.name}</h2>
         </span>
-        <span>{galleryItem.galleryItem.price}</span>
+        <span>{course.price}</span>
       </div>
     </div>
   );
